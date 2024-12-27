@@ -1,8 +1,10 @@
 use std::collections::HashSet;
 
-pub struct SolutionValidSudoku;
 
-impl SolutionValidSudoku {
+pub struct Solution;
+
+#[allow(dead_code)]
+impl Solution {
     pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
         let mut rows: Vec<HashSet<char>> = vec![HashSet::new(); 9];
         let mut cols: Vec<HashSet<char>> = vec![HashSet::new(); 9];
@@ -54,7 +56,7 @@ mod tests {
         ];
         let board_vec: Vec<Vec<char>> = BOARD.iter().map(|row| row.to_vec()).collect();
 
-        assert!(SolutionValidSudoku::is_valid_sudoku(board_vec));
+        assert!(Solution::is_valid_sudoku(board_vec));
     }
 
         #[test]
@@ -72,6 +74,6 @@ mod tests {
         ];
         let board_vec: Vec<Vec<char>> = BOARD.iter().map(|row| row.to_vec()).collect();
 
-        assert!(!SolutionValidSudoku::is_valid_sudoku(board_vec));
+        assert!(!Solution::is_valid_sudoku(board_vec));
     }
 }

@@ -1,6 +1,7 @@
-pub struct SolutionRotateImage;
+pub struct Solution;
 
-impl SolutionRotateImage {
+#[allow(dead_code)]
+impl Solution {
     pub fn rotate_image(matrix: &mut Vec<Vec<i32>>) {
         matrix.reverse();
         for i in 0..matrix.len() {
@@ -33,7 +34,7 @@ mod tests {
         ];
         let mat_answer_vec: Vec<Vec<i32>> = mat_answer.iter().map(|row| row.to_vec()).collect();
 
-        SolutionRotateImage::rotate_image(&mut mat_vec);
+        Solution::rotate_image(&mut mat_vec);
 
         assert_eq!(mat_vec, mat_answer_vec);
     }
@@ -56,7 +57,7 @@ mod tests {
         ];
         let mat_answer_vec: Vec<Vec<i32>> = mat_answer.iter().map(|row| row.to_vec()).collect();
 
-        SolutionRotateImage::rotate_image(&mut mat_vec);
+        Solution::rotate_image(&mut mat_vec);
 
         assert_eq!(mat_vec, mat_answer_vec);
     }
